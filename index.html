@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=10.0"/>
     <meta name="description" content="PETHS Drama - More than just a play"/>
+    <meta name="ts:pageId" value="home"/>
     <title>PETHS Drama | Home</title>
     <meta property="og:title" content="PETHS Drama"/>
     <link rel="stylesheet" href="main.css" type="text/css"/>
@@ -12,38 +13,13 @@
 
 <body>
     <div class="flex-fill" id="page-root">
-        <div class="nav-container">
-            <div class="nav-vert-center">
-                <div class="content-area">
-                    <a href="index.html">
-                        <img src="assets/images/icon.png" alt="PETHS Drama app icon" style="height: 100px; width: auto; padding-left: 20px;" />
-
-                    </a>
-                    <input type="checkbox" id="nav-menu-checkbox" class="nav-mobile-menu"/>
-                    <div class="nav-mobile-menu-background"></div>
-                    <label for="nav-menu-checkbox" class="nav-mobile-menu">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </label>
-                    <ul class="nav-link-container">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="performance.html">Performances</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="staff.html">Staff</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         
         <div class="body home">
             <div class="content-area">
                 <div class="card full-width-card card-video-clipping demo-animation-cell">
-                        <video autoplay="true" playsInline="true" muted="true" loop="true" preload="none" deferred-poster="main.jpg">
-                            <source src="main.jpg" type="video/webm"></source>
-                            <source src="main.MP4" type="video/mp4"></source>
+                        <video autoplay="true" playsInline="true" muted="true" loop="true" preload="none" deferred-poster="assets/videos/main.jpg">
+                            <source src="assets/videos/main.jpg" type="video/webm"></source>
+                            <source src="assets/videos/main.MP4" type="video/mp4"></source>
                         </video>
                 </div>
                 
@@ -192,6 +168,7 @@
                 <div class="ft-column ft-social-media-container">
                     <ul class="ft-link-container">
                         <li><a href="https://instagram.com/"><img src="assets/images/instagram-icon.png" alt="instagram icon" id="ft-instagram-icon"/></a></li>
+                        <li><button id="disable-home-screen-prompt" class="disable-prompt-btn">Don't show "Add to Home Screen"</button></li>
                     </ul>
                 </div>
             </section>
