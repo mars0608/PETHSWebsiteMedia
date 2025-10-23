@@ -1,5 +1,5 @@
 :root {
-    --config-contentWidth: getWidth();
+    --config-contentWidth: 60%;
     --config-navbarHeight: 140px;
     --config-cardSpacing: 32px;
     --config-cardPadding: 20px;
@@ -22,17 +22,214 @@
 }
 
 :root {
-    --config-backgroundColor: #ffedd8;
-    --config-backgroundColor2: #ffe3c7; /* slightly darker for contrast */
-    --config-backgroundColor3: #ffd6ad; /* for deeper backgrounds */
-    /* adjust text colors for light backgrounds */
-    --config-titleTextColor: #3b2c1a;
-    --config-textColor: #5a4430;
-    --config-textColor2: #7b5b41;
-    --config-placeholderColor: #a67c52;
-    --config-separatorColor: rgba(100, 80, 60, 0.3);
-    --config-opaqueSeparatorColor: rgba(100, 80, 60, 1.0);
-    --config-tipColor: rgba(255, 140, 0, 0.1);
+    /* PETHS Trailblazers - Apple Sleek Design */
+    --config-backgroundColor: #000000; /* Sleek black background */
+    --config-backgroundColor2: #1c1c1e; /* Dark gray for cards */
+    --config-backgroundColor3: #2c2c2e; /* Medium gray for depth */
+    
+    /* Text colors - Apple sleek style */
+    --config-titleTextColor: #ffd700; /* Trailblazers gold for titles */
+    --config-textColor: #ffffff; /* Pure white text */
+    --config-textColor2: #8e8e93; /* Apple gray for secondary text */
+    --config-placeholderColor: #636366; /* Darker gray for placeholders */
+    
+    /* Trailblazers accent colors - sleek */
+    --config-linkColor: #ff3b30; /* Bright red for accents */
+    --config-separatorColor: rgba(255, 215, 0, 0.2); /* Gold separators */
+    --config-opaqueSeparatorColor: rgba(255, 215, 0, 0.6); /* Stronger gold */
+    --config-tipColor: rgba(255, 215, 0, 0.15); /* Gold tips */
+}
+
+/* Add to Home Screen Modal Styles */
+.add-to-home-screen-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.add-to-home-screen-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.add-to-home-screen-content {
+    background: var(--config-backgroundColor2);
+    border: 1px solid var(--config-separatorColor);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 16px;
+    max-width: 320px;
+    width: 90%;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 215, 0, 0.08);
+    backdrop-filter: blur(30px) saturate(160%);
+    transform: scale(0.8);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.add-to-home-screen-modal.show .add-to-home-screen-content {
+    transform: scale(1);
+}
+
+.add-to-home-screen-title {
+    color: var(--config-titleTextColor);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    margin: 0 0 18px 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.add-to-home-screen-instructions {
+    color: var(--config-textColor);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.add-to-home-screen-instructions p {
+    margin: 0 0 12px 0;
+    font-weight: 500;
+}
+
+.add-to-home-screen-instructions ol {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.add-to-home-screen-instructions li {
+    margin-bottom: 8px;
+}
+
+.add-to-home-screen-instructions strong {
+    color: var(--config-titleTextColor);
+    font-weight: bold;
+}
+
+.share-icon {
+    background-color: var(--config-textColor);
+    color: var(--config-backgroundColor);
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.add-to-home-screen-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.add-to-home-screen-dismiss,
+.add-to-home-screen-close {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 90px;
+    letter-spacing: -0.1px;
+}
+
+.add-to-home-screen-dismiss {
+    background: linear-gradient(135deg, var(--config-backgroundColor3), var(--config-backgroundColor2));
+    color: var(--config-textColor);
+    border: 1px solid var(--config-separatorColor);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.add-to-home-screen-dismiss:hover {
+    background: linear-gradient(135deg, var(--config-separatorColor), var(--config-backgroundColor3));
+    box-shadow: 0 4px 16px rgba(255, 215, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+.add-to-home-screen-close {
+    background: linear-gradient(135deg, var(--config-linkColor), #d70015);
+    color: white;
+    box-shadow: 0 2px 8px rgba(255, 59, 48, 0.4);
+}
+
+.add-to-home-screen-close:hover {
+    background: linear-gradient(135deg, #d70015, #b30000);
+    box-shadow: 0 4px 16px rgba(255, 59, 48, 0.6);
+    transform: translateY(-1px);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+    .add-to-home-screen-content {
+        padding: 25px 20px;
+        margin: 15px;
+    }
+    
+    .add-to-home-screen-title {
+        font-size: 20px;
+    }
+    
+    .add-to-home-screen-instructions {
+        font-size: 14px;
+    }
+    
+    .add-to-home-screen-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .add-to-home-screen-dismiss,
+    .add-to-home-screen-close {
+        width: 100%;
+    }
+}
+
+/* Disable prompt button in footer */
+.disable-prompt-btn {
+    background: none;
+    border: 1px solid var(--config-textColor2);
+    color: var(--config-textColor2);
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.disable-prompt-btn:hover {
+    background-color: var(--config-textColor2);
+    color: var(--config-backgroundColor);
+    transform: translateY(-1px);
+}
+
+.disable-prompt-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.disable-prompt-btn:disabled:hover {
+    background: none;
+    color: var(--config-textColor2);
+    transform: none;
 }
 
 
